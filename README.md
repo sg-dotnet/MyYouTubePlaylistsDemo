@@ -143,7 +143,7 @@ We will be promoted to enter **Authorized Redirect URIs**. Here, we need to ente
 
 We will then be prompted to download the **Client ID** and **Client Secret**.
 
-## Managing Secrets
+### Managing Secrets
 The **Secret Manager tool** offers us a way to store sensitive data in our local development machine. To use it, we first need to install this command line tool via Nuget to our project.
 
 ```
