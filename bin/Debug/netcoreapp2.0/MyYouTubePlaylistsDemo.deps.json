@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "44d0543178ee1549dcb29347dbf280564d706cd9"
+    "signature": "64646c3adac5ec6f214d6ea1b201a6c1be4a8b21"
   },
   "compilationOptions": {
     "defines": [
@@ -25,6 +25,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0-preview1-final",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0-preview1-final",
+          "Microsoft.Extensions.SecretManager.Tools": "2.0.0-preview1-final",
           "Microsoft.NETCore.App": "2.0.0-preview1-002111-00",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0-preview1-final"
         },
@@ -2290,6 +2291,18 @@
         },
         "compile": {
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Extensions.SecretManager.Tools/2.0.0-preview1-final": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.UserSecrets": "2.0.0-preview1-final",
+          "Microsoft.NETCore.App": "2.0.0-preview1-002111-00"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/dotnet-user-secrets.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp2.0/dotnet-user-secrets.dll": {}
         }
       },
       "Microsoft.Extensions.WebEncoders/2.0.0-preview1-final": {
@@ -5554,6 +5567,13 @@
       "sha512": "sha512-t99f+6/CPOXlGEtg2x0POSjDeLlBu7BNPog+93qJsOKUWwhUcvwxO383iaP6ql/2Ojc0oQBpV7foY0BJC74UdA==",
       "path": "microsoft.extensions.primitives/2.0.0-preview1-final",
       "hashPath": "microsoft.extensions.primitives.2.0.0-preview1-final.nupkg.sha512"
+    },
+    "Microsoft.Extensions.SecretManager.Tools/2.0.0-preview1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/EAZiRrcr7twH+XkadAADJZUvPAYEefyt3GhY8nOFhXuIJf+hI9U4wXg5uVFIVafoyJ1qwS5lfvYKnwbWQOABw==",
+      "path": "microsoft.extensions.secretmanager.tools/2.0.0-preview1-final",
+      "hashPath": "microsoft.extensions.secretmanager.tools.2.0.0-preview1-final.nupkg.sha512"
     },
     "Microsoft.Extensions.WebEncoders/2.0.0-preview1-final": {
       "type": "package",

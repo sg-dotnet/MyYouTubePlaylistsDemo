@@ -2431,6 +2431,19 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
+      "Microsoft.Extensions.SecretManager.Tools/2.0.0-preview1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.UserSecrets": "2.0.0-preview1-final",
+          "Microsoft.NETCore.App": "2.0.0-preview1-002111-00"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/dotnet-user-secrets.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/dotnet-user-secrets.dll": {}
+        }
+      },
       "Microsoft.Extensions.WebEncoders/2.0.0-preview1-final": {
         "type": "package",
         "dependencies": {
@@ -7321,6 +7334,18 @@
         "lib/netstandard1.0/Microsoft.Extensions.Primitives.xml",
         "microsoft.extensions.primitives.2.0.0-preview1-final.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.SecretManager.Tools/2.0.0-preview1-final": {
+      "sha512": "/EAZiRrcr7twH+XkadAADJZUvPAYEefyt3GhY8nOFhXuIJf+hI9U4wXg5uVFIVafoyJ1qwS5lfvYKnwbWQOABw==",
+      "type": "package",
+      "path": "microsoft.extensions.secretmanager.tools/2.0.0-preview1-final",
+      "files": [
+        "lib/netcoreapp2.0/dotnet-user-secrets.dll",
+        "lib/netcoreapp2.0/dotnet-user-secrets.runtimeconfig.json",
+        "microsoft.extensions.secretmanager.tools.2.0.0-preview1-final.nupkg.sha512",
+        "microsoft.extensions.secretmanager.tools.nuspec",
+        "prefercliruntime"
       ]
     },
     "Microsoft.Extensions.WebEncoders/2.0.0-preview1-final": {
@@ -13413,6 +13438,7 @@
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.0-preview1-final",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0-preview1-final",
+      "Microsoft.Extensions.SecretManager.Tools >= 2.0.0-preview1-final",
       "Microsoft.NETCore.App >= 2.0.0-preview1-002111-00",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0-preview1-final"
     ]
@@ -13450,6 +13476,10 @@
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "suppressParent": "All",
+            "target": "Package",
+            "version": "2.0.0-preview1-final"
+          },
+          "Microsoft.Extensions.SecretManager.Tools": {
             "target": "Package",
             "version": "2.0.0-preview1-final"
           },

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.Service;
 using Microsoft.AspNetCore.Identity.Service.EntityFrameworkCore;
@@ -41,6 +42,12 @@ namespace MyYouTubePlaylistsDemo.Identity
                     .AddEntityFrameworkStores<IdentityServiceDbContext>();
 
                 // Add external authentication handlers below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
+
+                services.AddGoogleAuthentication(g => {
+                    g.ClientId = context.Configuration["Authentication:Google:ClientID"];
+                    g.ClientSecret = context.Configuration["Authentication:Google:ClientSecret"];
+                    g.SignInScheme = IdentityCookieOptions.ExternalScheme;
+                });
             });
         }
     }
