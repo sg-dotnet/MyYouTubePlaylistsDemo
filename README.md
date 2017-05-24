@@ -42,25 +42,25 @@ So, based on the link given above, we will need to set up HTTPS by using self-si
 
 ```
 openssl req -new -x509 -newkey rsa:2048 -keyout localhostMyYouTubePlaylists.key -out localhostMyYouTubePlaylists.cer -days 365 -subj /CN=localhost    
-*You need to provide PEM pass phrase after this*
+*You need to provide PEM pass phrase after this
 
 openssl pkcs12 -export -out certificateMyYouTubePlaylists.pfx -inkey localhostMyYouTubePlaylists.key -in localhostMyYouTubePlaylists.cer    
-*You need to provide the exact same pass phrase that you entered in the previous command for the key.*    
-*You also need to enter an Export Password.*
+*You need to provide the exact same pass phrase that you entered in the previous command for the key.*   
+*You also need to enter an Export Password.
 ```
 
 We then need to add the certificate to our keychain and change its trust settings so that it is trusted for HTTPS during development.
 
 ```
 security import certificateMyYouTubePlaylists.pfx -k ~/Library/Keychains/login.keychain-db
-*You need to provide the Export Password you entered earlier.*
+*You need to provide the Export Password you entered earlier.
 
 security add-trusted-cert localhostMyYouTubePlaylists.cer
-*You need to enter your macOS username and password here since you are making changes to the trust settings.*
+*You need to enter your macOS username and password here since you are making changes to the trust settings.
 ```
 
 Finally, since we store the certificate in our keychain, which is the equivalent of the CurrentUser/My store on Windows, we need to change set the following for the HTTPS certificate in **appSettings.Development.json**.
-```
+```json
 {
     "Certificates": {
         "HTTPS": {
@@ -74,7 +74,7 @@ Finally, since we store the certificate in our keychain, which is the equivalent
 
 Now, when we visit the HTTPS version of our web application, it will prompt the following.
 ```
-**dotnet wants to sign using key "privateKey" in your keychain.
+dotnet wants to sign using key "privateKey" in your keychain.
 
 The authenticity of "dotnet" cannot be verified. Do you want to allow acccess to this item?
 ```
@@ -82,7 +82,7 @@ The authenticity of "dotnet" cannot be verified. Do you want to allow acccess to
 Please press **"Always Allow"**.
 
 Finally, let's move on to the urlRewrite.config and please make sure the rules given in template taking care of both cases, i.e. localhost and 127.0.0.1, as shown below.
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <rewrite>
   <rules>
@@ -166,7 +166,7 @@ Successfully saved ... to the secret store.
 ### Adding Google Login
 Back to our working directory. There is an area known as **IdentityService**. We will configure external authentication handlers in its file **IdentityServiceStartup.cs**.
 
-```
+```c#
 services.AddGoogleAuthentication(g => {
   g.ClientId = context.Configuration["Authentication:Google:ClientID"];
   g.ClientSecret = context.Configuration["Authentication:Google:ClientSecret"];
@@ -183,7 +183,7 @@ First of all, we need to enable the **YouTube Data API** in the Google API Conso
 
 Then, we need to use scope to request for permissions from the users. YouTube Data API has their scopes defined at https://developers.google.com/youtube/v3/guides/auth/server-side-web-apps. In this demo, we will only use the API to get the list of playlists from the logged-in user. So the scope we are going to use is `https://www.googleapis.com/auth/youtube.readonly`.
 
-```
+```c#
 services.AddGoogleAuthentication(g => {
   g.ClientId = context.Configuration["Authentication:Google:ClientID"];
   g.ClientSecret = context.Configuration["Authentication:Google:ClientSecret"];
@@ -198,13 +198,13 @@ The **``g.SaveToken``** is important. Otherwise, we will not be able to get the 
 
 So, to retrieve the token, we have the following statement in **ExternalLogin** method.
 
-```
+```c#
   TempData["Token"] = info.AuthenticationTokens.Single(t => t.Name == "access_token").Value;
 ```
 
 With this token, we then can retrieve logged-in user's YouTube data, such as his/her playlists.
 
-```
+```c#
 using (var client = new HttpClient())
 {
     client.DefaultRequestHeaders.Authorization =
