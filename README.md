@@ -229,7 +229,18 @@ if (youtubeToken != null)
 
 ### References
  - [[Microsoft Docs] Setting up HTTPS for development in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/https)
- - [Known issues for .NET Core 2.0, ASP.NET Core 2.0, and ASP.NET and Web Tools in Visual Studio 2017 "Preview"](https://github.com/aspnet/Tooling/blob/master/known-issues-vs2017-preview.md)
- - [Configuring Google authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/google-logins)
- - [UserSecrets: obsolete APIs removed in 2.0](https://github.com/aspnet/Announcements/issues/223)
- - [Using OAuth 2.0 for Web Server Applications](https://developers.google.com/youtube/v3/guides/auth/server-side-web-apps)
+ - [[GitHub] Known issues for .NET Core 2.0, ASP.NET Core 2.0, and ASP.NET and Web Tools in Visual Studio 2017 "Preview"](https://github.com/aspnet/Tooling/blob/master/known-issues-vs2017-preview.md)
+ - [[Microsoft Docs] .NET Command Line Tools](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet)
+ - [[Microsoft Docs] Enabling authentication using Facebook, Google and other external providers](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/index)
+ - [[Microsoft Docs] Configuring Google authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/google-logins)
+ - [[Microsoft Docs] dotnet-add package](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-add-package)
+ - [[Microsoft Docs] Safe storage of app secrets during development](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets)
+ - [Google Developers Console / Google API Manager](https://console.developers.google.com)
+ - [[Google Developers]Using OAuth 2.0 for Web Server Applications](https://developers.google.com/youtube/v3/guides/auth/server-side-web-apps)
+ - [[Google Developers] YouTube Data API: Playlists: List](https://developers.google.com/youtube/v3/docs/playlists/list)
+ - [[Google Developers] IFrame Player API](https://developers.google.com/youtube/iframe_api_reference)
+ 
+### Readings
+ - [[The Register] Microsoft's .NET-mare for developers: ASP.NET Core 2.0 won't work on Windows-only .NET](https://www.theregister.co.uk/2017/05/09/dot_net_compatibility/)
+ - [[Microsoft Docs] Working with multiple environments](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments)
+ - [[.NET Blog] Announcing EF Core 2.0 Preview 1](https://blogs.msdn.microsoft.com/dotnet/2017/05/12/announcing-ef-core-2-0-preview-1/)
