@@ -47,6 +47,9 @@ namespace MyYouTubePlaylistsDemo.Identity
                     g.ClientId = context.Configuration["Authentication:Google:ClientID"];
                     g.ClientSecret = context.Configuration["Authentication:Google:ClientSecret"];
                     g.SignInScheme = IdentityCookieOptions.ExternalScheme;
+                    g.DisplayName = "YouTube (Google)";
+                    g.Scope.Add("https://www.googleapis.com/auth/youtube.readonly");
+                    g.SaveTokens = true;
                 });
             });
         }

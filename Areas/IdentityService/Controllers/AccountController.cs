@@ -158,6 +158,8 @@ namespace MyYouTubePlaylistsDemo.Identity.Controllers
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false);
             if (result.Succeeded)
             {
+                HttpContext.Response.Cookies.Append("ytToken", info.AuthenticationTokens.Single(t => t.Name == "access_token").Value);
+                
                 _logger.LogInformation(5, "User logged in with {Name} provider.", info.LoginProvider);
                 return RedirectToLocal(returnUrl);
             }
