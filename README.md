@@ -1,4 +1,4 @@
-# MyYouTubePlaylistsDemo
+# My YouTube Playlists Demo
 This application is used to show a simple ASP .NET Core 2.0 web application with authentication using Google and connecting to YouTube Data API v3 to retrieve the playlists of logged-in user.
 
 This app is developed on **macOS 10.12 (aka macOS Sierra)** using **Visual Studio Code v.1.12.2**.
