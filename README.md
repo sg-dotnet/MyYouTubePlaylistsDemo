@@ -211,7 +211,7 @@ using (var client = new HttpClient())
         AuthenticationHeaderValue.Parse("Bearer " + youtubeToken);
 
     using (var response = await client.GetAsync(
-        $"https://www.googleapis.com/youtube/v3/playlists?part=snippet,status&key=...&mine=true&maxResults=10"))
+        "https://www.googleapis.com/youtube/v3/playlists?part=snippet,status&key=...&mine=true&maxResults=10"))
     {
         try
         {
