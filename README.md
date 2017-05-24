@@ -196,29 +196,33 @@ services.AddGoogleAuthentication(g => {
 
 The **``g.SaveToken``** is important. Otherwise, we will not be able to get the token in the authentication step. Without token, we then cannot retrieve the user's playlists.
 
-So, to retrieve the token, we have the following statement in **ExternalLogin** method.
+So, to retrieve the token, we have the following statement in **ExternalLogin** method. We store the **Access Token** to a cookie called **ytToken**.
 
 ```c#
-  TempData["Token"] = info.AuthenticationTokens.Single(t => t.Name == "access_token").Value;
+HttpContext.Response.Cookies.Append("ytToken", info.AuthenticationTokens.Single(t => t.Name == "access_token").Value);
 ```
 
-With this token, we then can retrieve logged-in user's YouTube data, such as his/her playlists.
+With this token from cookie, we then can retrieve logged-in user's YouTube data, such as his/her playlists.
 
 ```c#
-using (var client = new HttpClient())
+var youtubeToken = HttpContext.Request.Cookies["ytToken"];
+if (youtubeToken != null)
 {
-    client.DefaultRequestHeaders.Authorization =
-        AuthenticationHeaderValue.Parse("Bearer " + youtubeToken);
-
-    using (var response = await client.GetAsync(
-        "https://www.googleapis.com/youtube/v3/playlists?part=snippet,status&key=...&mine=true&maxResults=10"))
+    using (var client = new HttpClient())
     {
-        try
+        client.DefaultRequestHeaders.Authorization =
+            AuthenticationHeaderValue.Parse("Bearer " + youtubeToken);
+
+        using (var response = await client.GetAsync(
+            "https://www.googleapis.com/youtube/v3/playlists?part=snippet,status&key=...&mine=true&maxResults=10"))
         {
-            string stringResponse = await response.Content.ReadAsStringAsync();
-            return View(JsonConvert.DeserializeObject<YouTubePlaylistResponse>(stringResponse));
+            try
+            {
+                string stringResponse = await response.Content.ReadAsStringAsync();
+                return View(JsonConvert.DeserializeObject<YouTubePlaylistResponse>(stringResponse));
+            }
+            catch (HttpRequestException){...}
         }
-        catch (HttpRequestException){...}
     }
 }
 ```
