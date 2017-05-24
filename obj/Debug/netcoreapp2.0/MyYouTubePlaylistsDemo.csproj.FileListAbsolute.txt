@@ -1,0 +1,11 @@
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/bin/Debug/netcoreapp2.0/libe_sqlite3.dylib
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/bin/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.deps.json
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/bin/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.runtimeconfig.json
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/bin/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.runtimeconfig.dev.json
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/bin/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.dll
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/bin/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.pdb
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/obj/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.csproj.CoreCompileInputs.cache
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/obj/Debug/netcoreapp2.0/UserSecretsAssemblyInfo.cs
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/obj/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.AssemblyInfo.cs
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/obj/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.dll
+/Users/chunlin/ASP.NetProjects/MyYouTubePlaylistsDemo/obj/Debug/netcoreapp2.0/MyYouTubePlaylistsDemo.pdb
