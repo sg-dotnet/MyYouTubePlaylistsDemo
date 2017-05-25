@@ -8,6 +8,8 @@ This app is developed on **macOS 10.12 (aka macOS Sierra)** using **Visual Studi
 ### Install .NET Core 2.0 Preview 1
 Please visit https://www.microsoft.com/net/core/preview#macos to download the official installer.
 
+![Installing .NET Core 2 Preview on macOS](github-images/install-dotnetcore2-on-mac.png?raw=true)
+
 ### Scaffolding Web Application
  1. Create a working directory for your project and navigate to it;
  2. Run the following command on **Terminal**;
@@ -26,6 +28,8 @@ Please visit https://www.microsoft.com/net/core/preview#macos to download the of
     ```
  6. Open the project folder in **Visual Studio Code** and select the **Startup.cs** file. VS Code will prompt to restore the needed project dependencities and add build/debug dependencies. Please choose **Restore** and **Yes** to both of them, respectively.
     - Do not try to set the Debug Configuration yourself otherwise the project can't be built because of missing the tasks.json file. =)
+    
+![Restore and Build](github-images/restore-and-build.png?raw=true)
  
 ### First Attempt To Build
 When we first build the project, the following exception will be thrown.
@@ -111,6 +115,8 @@ After doing all these, we can finally see our webpage on web browser.
 
 Now, let's click on the **"Sign in"** button on the top-right corner of the page. We will see a page saying that we need to update our database first to run the migration scripts to create tables for storing user info.
 
+![Data Operation Failed](github-images/data-operation-failed.png?raw=true)
+
 ### Migration for IdentityServiceDbContext
 We can apply pending migrations from a command prompt at our project directory using the command below.
 ```
@@ -149,6 +155,8 @@ The **Secret Manager tool** offers us a way to store sensitive data in our local
 ```
 dotnet add package Microsoft.Extensions.SecretManager.Tools -v 2.0.0-preview1-final
 ```
+
+![Secret Manager Tools on Nuget](github-images/secret-manager-tools.png?raw=true)
 
 We just need to execute the following commands in our project working directory in order to store the Google secrets above:
 
@@ -195,6 +203,8 @@ services.AddGoogleAuthentication(g => {
 ```
 
 The **``g.SaveToken``** is important. Otherwise, we will not be able to get the token in the authentication step. Without token, we then cannot retrieve the user's playlists.
+
+![Asking user for permission to retrieve user's data on YouTube](github-images/youtube-permissions.png?raw=true)
 
 So, to retrieve the token, we have the following statement in **ExternalLogin** method. We store the **Access Token** to a cookie called **ytToken**.
 
